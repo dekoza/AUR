@@ -1,0 +1,17 @@
+pkgname=django-ckeditor
+pkgver=3.6.2.1
+pkgrel=1
+pkgdesc="Django admin CKEditor integration."
+arch=(any)
+url="https://github.com/dwaiter/django-ckeditor"
+license=('BSD')
+depends=('python2' 'python2-pillow')
+makedepends=('python2-distribute')
+source=("http://pypi.python.org/packages/source/d/${pkgname}/${pkgname}-${pkgver}.tar.gz")
+md5sums=('c4616ded1d756058415bf1533618253d')
+
+package() {
+  cd "$srcdir/$pkgname-$pkgver"
+  python2 setup.py install --root="$pkgdir/" --optimize=1
+}
+

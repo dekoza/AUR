@@ -1,0 +1,18 @@
+pkgname=python2-pillow
+_appname=Pillow
+pkgver=1.7.7
+pkgrel=1
+pkgdesc="Python Imaging Library (PIL) fork."
+arch=(i686 x86_64)
+url="https://github.com/dwaiter/django-ckeditor"
+license=('BSD')
+depends=('python2')
+makedepends=('python2-distribute')
+source=("http://pypi.python.org/packages/source/P/${_appname}/${_appname}-${pkgver}.zip")
+md5sums=('0617fae88d62422b878906a3c394c687')
+
+package() {
+  cd "$srcdir/$_appname-$pkgver"
+  python2 setup.py install --root="$pkgdir/" --optimize=1
+}
+
