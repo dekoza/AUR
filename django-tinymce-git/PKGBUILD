@@ -1,5 +1,5 @@
 pkgname=django-tinymce-git
-pkgver=20120727
+pkgver=20120824
 pkgrel=1
 pkgdesc="TinyMCE widget for Django."
 arch=(any)
@@ -8,6 +8,7 @@ license=('MIT')
 depends=('python2')
 makedepends=('git')
 provides=('django-tinymce')
+conflicts=('django-tinymce')
 md5sums=()
 
 _gitroot="https://github.com/aljosa/django-tinymce.git" 

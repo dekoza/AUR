@@ -1,5 +1,5 @@
 pkgname=django-ckeditor-git
-pkgver=20120727
+pkgver=20120824
 pkgrel=1
 pkgdesc="CKEditor widget for Django."
 arch=(any)
@@ -7,6 +7,7 @@ url="https://github.com/dwaiter/django-ckeditor"
 license=('BSD')
 depends=('python2')
 makedepends=('git')
+conflicts=('django-ckeditor')
 provides=('django-ckeditor')
 md5sums=()
 
