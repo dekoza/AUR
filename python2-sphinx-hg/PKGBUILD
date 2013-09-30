@@ -1,12 +1,11 @@
 pkgname=python2-sphinx-hg
-_appname=python-sphinx
 pkgver=20130930
 pkgrel=1
 pkgdesc="Python2 documentation generator"
 arch=(i686 x86_64)
 url="https://bitbucket.org/birkenfeld/sphinx/"
 license=('BSD')
-depends=('python2')
+depends=('python2 python2-jinja')
 provides=('python2-sphinx')
 conflicts=('python2-sphinx')
 makedepends=('python2-distribute')
@@ -17,9 +16,6 @@ package() {
   cd "$srcdir/$pkgname"
   python2 setup.py install --root="$pkgdir/" --optimize=1
 
-  # thanks @gosella
-  # do not have files ending in .py in /usr/bin
-  # also, fix python-pillow conflict
   for f in sphinx-apidoc sphinx-autogen sphinx-build sphinx-quickstart; do
     mv -v "${pkgdir}"/usr/bin/${f}{,2}
   done
